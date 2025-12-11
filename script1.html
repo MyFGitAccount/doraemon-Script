@@ -7,42 +7,186 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
     <style>
-        .reveal .slides section {
-            text-align: left;
-            padding: 20px;
+        /* Make the reveal container fill the viewport */
+        .reveal {
+            height: 100vh;
+            width: 100vw;
         }
+        
+        /* Make slides container fill the parent */
+        .reveal .slides {
+            width: 100% !important;
+            height: 100% !important;
+            left: 0 !important;
+            top: 0 !important;
+            transform: none !important;
+        }
+        
+        /* Each slide takes full viewport with scrollable content */
+        .reveal .slides section {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex !important;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto !important;
+            overflow-x: hidden !important;
+            text-align: left;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        
+        /* Content container within each slide */
+        .slide-content {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 60px;
+            flex: 1;
+        }
+        
+        /* Title slide specific styling */
+        .reveal .slides section:first-child {
+            justify-content: center;
+            text-align: center;
+        }
+        
+        /* Character styling */
         .character {
             color: #4FC3F7;
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: 25px;
+            font-size: 2em;
         }
+        
+        /* Dialogue styling */
         .dialogue {
-            margin-left: 30px;
+            margin-left: 40px;
             font-style: italic;
             color: #E0E0E0;
+            margin-bottom: 15px;
+            line-height: 1.6;
         }
+        
+        /* Parenthetical action styling */
+        .dialogue .action {
+            color: #B0BEC5;
+            font-style: normal;
+        }
+        
+        /* Narrator styling */
         .narrator {
             color: #FFB74D;
             font-style: italic;
             margin: 20px 0;
-            border-left: 3px solid #FFB74D;
-            padding-left: 15px;
+            padding: 15px;
+            background: rgba(255, 183, 77, 0.1);
+            border-radius: 5px;
+            line-height: 1.6;
         }
+        
+        /* Concept highlighting */
         .concept {
             color: #81C784;
             font-weight: bold;
+            text-shadow: 0 0 10px rgba(129, 199, 132, 0.3);
         }
+        
+        /* Scene heading styling */
         .scene-heading {
             color: #BA68C8;
-            font-size: 1.2em;
+            font-size: 1.3em;
             margin-bottom: 30px;
             text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
+        
+        /* Scene directions */
+        .scene-direction {
+            color: #90A4AE;
+            font-style: italic;
+            margin: 10px 0 20px 20px;
+            font-size: 0.95em;
+        }
+        
+        /* Verse/quote styling */
         .verse {
             color: #FFF176;
             font-style: italic;
             text-align: center;
-            margin: 30px 0;
+            margin: 40px 0;
+            font-size: 1.1em;
+            padding: 20px;
+            border-left: 3px solid #FFF176;
+            border-right: 3px solid #FFF176;
+            background: rgba(255, 241, 118, 0.05);
+        }
+        
+        /* Word count display */
+        .word-count {
+            color: #78909C;
+            font-size: 0.9em;
+            text-align: right;
+            margin-top: 30px;
+            font-style: italic;
+        }
+        
+        /* Custom scrollbar styling */
+        .reveal .slides section::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        .reveal .slides section::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+        
+        .reveal .slides section::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #4FC3F7, #BA68C8);
+            border-radius: 5px;
+        }
+        
+        .reveal .slides section::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #29B6F6, #AB47BC);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .slide-content {
+                padding: 20px 30px;
+            }
+            
+            .character {
+                font-size: 1.1em;
+                margin-top: 20px;
+            }
+            
+            .dialogue {
+                margin-left: 20px;
+                font-size: 1.95em;
+            }
+        }
+        
+        /* Fade-in animation for new content */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .reveal .slides section .slide-content > * {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        /* Highlight current speaker */
+        .character.current-speaker {
+            color: #FF8A65;
+            text-shadow: 0 0 10px rgba(255, 138, 101, 0.5);
         }
     </style>
 </head>
@@ -51,229 +195,722 @@
         <div class="slides">
             <!-- Title Slide -->
             <section>
-                <h1>The Doraemon Sacrifice</h1>
-                <h3>A Theological Dilemma</h3>
-                <p>Tokyo, 2026</p>
-                <p>Based on the original script</p>
-            </section>
-
-            <!-- Scene Setup -->
-            <section>
-                <p class="scene-heading">[SCENE START]</p>
-                <p class="scene-heading">INT. BARE, SECURE GOVERNMENT CONFERENCE ROOM - DAY - 2026</p>
-                
-                <div class="narrator">
-                    Tokyo, 2026. A city held by bears. In a secure room, three people—Momoko, Yuki, and Kanji—face an impossible choice. One must become Doraemon and die to save Japan. They have two hours to decide.
+                <div class="slide-content">
+                    <h1 style="color: #4FC3F7; font-size: 3em; margin-bottom: 30px;">THE DORAEMON SACRIFICE</h1>
+                    <h2 style="color: #FFB74D; margin-bottom: 20px;">A Theological Dilemma</h2>
+                    <div style="margin-top: 50px;">
+                        <p style="color: #81C784; font-size: 1.2em;">Tokyo, 2026</p>
+                        <p style="color: #E0E0E0; font-style: italic;">Based on the original script</p>
+                    </div>
+                    <div class="word-count" style="margin-top: 100px;">FINAL WORD COUNT: 3,347</div>
                 </div>
             </section>
 
-            <!-- Initial Dialogue -->
+            <!-- Scene 1 -->
             <section>
-                <div class="character">KANJI</div>
-                <div class="dialogue">(Exhaling shakily) So. This is it. We have two hours to decide which one of us… goes to the bears.</div>
+                <div class="slide-content">
+                    <p class="scene-heading">[SCENE START]</p>
+                    <p class="scene-heading">INT. BARE, SECURE GOVERNMENT CONFERENCE ROOM - DAY - 2026</p>
+                    
+                    <div class="narrator">
+                        Tokyo, 2026. A city held by bears. In a secure room, three people—Momoko, Yuki, and Kanji—face an impossible choice. One must become Doraemon and die to save Japan. They have two hours to decide.
+                    </div>
 
-                <div class="character">MOMOKO</div>
-                <div class="dialogue">(Quietly) To die.</div>
+                    <div class="character current-speaker">KANJI</div>
+                    <div class="dialogue">
+                        <span class="action">(Exhaling shakily)</span><br>
+                        So. This is it. We have two hours to decide which one of us… goes to the bears.
+                    </div>
 
-                <div class="character">YUKI</div>
-                <div class="dialogue">Nods slowly, her eyes fixed on the bear outside. The Prime Minister made that quite clear. One Doraemon. One sacrifice. The Bear King accepts nothing less. The Shinto master was… specific.</div>
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        <span class="action">(Quietly)</span><br>
+                        To die.
+                    </div>
 
-                <div class="narrator">A pause. The weight of the absurdity and the horror sits with them.</div>
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        Nods slowly, her eyes fixed on the bear outside.<br>
+                        The Prime Minister made that quite clear. One Doraemon. One sacrifice. The Bear King accepts nothing less. The Shinto master was… specific.
+                    </div>
+
+                    <div class="narrator">
+                        A pause. The weight of the absurdity and the horror sits with them.
+                    </div>
+                </div>
             </section>
 
-            <!-- The Discussion Begins -->
+            <!-- Scene 2 -->
             <section>
-                <div class="character">KANJI</div>
-                <div class="dialogue">It’s madness. Cosplay as a blue cartoon cat to appease a bear king? It sounds like a child’s nightmare.</div>
+                <div class="slide-content">
+                    <div class="character current-speaker">KANJI</div>
+                    <div class="dialogue">
+                        It's madness. Cosplay as a blue cartoon cat to appease a bear king? It sounds like a child's nightmare.
+                    </div>
 
-                <div class="character">MOMOKO</div>
-                <div class="dialogue">But the bears are real. And 70% of our country… gone. The world is upside down. In such times, we grasp at stories. Even old children’s stories. The master said the bears believe it. That is the reality we must navigate.</div>
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        But the bears are real. And 70% of our country… gone. The world is upside down. In such times, we grasp at stories. Even old children's stories. The master said the bears believe it. That is the reality we must navigate.
+                    </div>
 
-                <div class="character">YUKI</div>
-                <div class="dialogue">The reality is, one of us must wear the costume and die. The question is *who*. And *why*. We are not just three names. We are… what we believe. They told us that. It’s why they mentioned our faiths. They expect our beliefs to guide us. Or to conflict.</div>
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        The reality is, one of us must wear the costume and die. The question is *who*. And *why*. We are not just three names. We are… what we believe. They told us that. It's why they mentioned our faiths. They expect our beliefs to guide us. Or to conflict.
+                    </div>
 
-                <div class="narrator">Another long silence. Kanji fidgets, his lips moving in silent prayer.</div>
+                    <div class="narrator">
+                        Another long silence. Kanji fidgets, his lips moving in silent prayer.
+                    </div>
+                </div>
             </section>
 
-            <!-- Kanji's Offer -->
+            <!-- Scene 3: Kanji's Offer -->
             <section>
-                <div class="character">KANJI</div>
-                <div class="dialogue">I… I should go.</div>
+                <div class="slide-content">
+                    <div class="character current-speaker">KANJI</div>
+                    <div class="dialogue">
+                        I… I should go.
+                    </div>
 
-                <div class="narrator">Momoko and Yuki look at him, surprised.</div>
+                    <div class="scene-direction">Momoko and Yuki look at him, surprised.</div>
 
-                <div class="character">MOMOKO</div>
-                <div class="dialogue">Why, Kanji?</div>
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        Why, Kanji?
+                    </div>
 
-                <div class="character">KANJI</div>
-                <div class="dialogue">Because it is <span class="concept">Ramadan</span>. Well, it was. It ended last week. But… the spirit remains. Fasting, yes, but more than that. It is about self-discipline, sacrifice, and empathy for those who suffer. For thirty days, we abstain to draw closer to God, to purify ourselves, to remember the needy. Now… look outside. All of Japan is needy. All are suffering. If the ultimate act of <span class="concept">Ramadan</span> is to give of oneself completely to alleviate suffering, in obedience to God’s will… then perhaps this is my test. A final, terrible *sadaqah*.</div>
+                    <div class="character current-speaker">KANJI</div>
+                    <div class="dialogue">
+                        Because it is <span class="concept">Ramadan</span>. Well, it was. It ended last week. But… the spirit remains. Fasting, yes, but more than that. It is about self-discipline, sacrifice, and empathy for those who suffer. For thirty days, we abstain to draw closer to God, to purify ourselves, to remember the needy. Now… look outside. All of Japan is needy. All are suffering. If the ultimate act of <span class="concept">Ramadan</span> is to give of oneself completely to alleviate suffering, in obedience to God's will… then perhaps this is my test. A final, terrible *sadaqah*.
+                    </div>
 
-                <div class="narrator">He speaks with passion, but his hands tremble.</div>
+                    <div class="narrator">
+                        He speaks with passion, but his hands tremble.
+                    </div>
+                </div>
             </section>
 
-            <!-- Yuki Introduces Chengfu -->
+            <!-- Scene 4: Yuki's Response -->
             <section>
-                <div class="character">YUKI</div>
-                <div class="dialogue">That is a noble impulse, Kanji. But is it wisdom? Or is it fear speaking, dressed as piety? You tremble.</div>
+                <div class="slide-content">
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        That is a noble impulse, Kanji. But is it wisdom? Or is it fear speaking, dressed as piety? You tremble.
+                    </div>
 
-                <div class="character">KANJI</div>
-                <div class="dialogue">Of course I tremble! Who wouldn’t?</div>
+                    <div class="character current-speaker">KANJI</div>
+                    <div class="dialogue">
+                        Of course I tremble! Who wouldn't?
+                    </div>
 
-                <div class="character">YUKI</div>
-                <div class="dialogue">Exactly. Your offer comes from a swirling place of fear, duty, and religious fervor. Let us think, not just feel. In my tradition—the Daoist part of me—we speak of <span class="concept">Chengfu</span>.</div>
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        Exactly. Your offer comes from a swirling place of fear, duty, and religious fervor. Let us think, not just feel. In my tradition—the Daoist part of me—we speak of <span class="concept">Chengfu</span>.
+                    </div>
 
-                <div class="narrator">Momoko leans forward, interested.</div>
-
-                <div class="character">MOMOKO</div>
-                <div class="dialogue">"Returning to simplicity"? The state of an uncarved block?</div>
-
-                <div class="character">YUKI</div>
-                <div class="dialogue">Yes. But more. It is the burden of one’s innate nature, the karma of your very being before you even act. The weight you are born to carry. My Buddhist side would call it *vāsanā*, the karmic imprints. We three were all born at the same, absurdly specific moment. 1:11 am, January 1st, 2001. Why? What is the <span class="concept">Chengfu</span> of that moment? What is the collective burden we share, simply by being here, born then?</div>
+                    <div class="scene-direction">Momoko leans forward, interested.</div>
+                </div>
             </section>
 
-            <!-- Momoko Introduces the Problem of Evil -->
+            <!-- Scene 5: Chengfu Explained -->
             <section>
-                <div class="character">MOMOKO</div>
-                <div class="dialogue">You speak of understanding the current. But my faith speaks of a God who is the source of the river itself. And this… this horror of the bears, the slaughter, the collapse… it forces the oldest question to the surface. The one we call the problem of evil.</div>
+                <div class="slide-content">
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        "Returning to simplicity"? The state of an uncarved block?
+                    </div>
 
-                <div class="narrator">She stands, walking to the window. The bear is gone, leaving only ruins.</div>
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        Yes. But more. It is the burden of one's innate nature, the karma of your very being before you even act. The weight you are born to carry. My Buddhist side would call it *vāsanā*, the karmic imprints. We three were all born at the same, absurdly specific moment. 1:11 am, January 1st, 2001. Why? What is the <span class="concept">Chengfu</span> of that moment? What is the collective burden we share, simply by being here, born then?
+                    </div>
 
-                <div class="character">MOMOKO (CONT'D)</div>
-                <div class="dialogue">If God is all-good, He would want to stop this. If He is all-powerful, He could stop this. If He is all-knowing, He would have foreseen and prevented it. Yet the bears rule Japan. So, where is God? Is He not good? Not powerful? Or… is this part of some plan we cannot fathom?</div>
+                    <div class="character current-speaker">KANJI</div>
+                    <div class="dialogue">
+                        You think it's fate? That one of us was *meant* for this?
+                    </div>
+
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        I think our coincidence is too great to be mere chance. The Dao flows, and we are in a violent whirlpool of its making. Our task is not to fight the current with blind sacrifice, but to understand our place within it. Perhaps the one whose nature is most aligned with this… ridiculous, tragic sacrifice… is the one who should go. Not the one who is most afraid of hell or most eager for heaven.
+                    </div>
+                </div>
             </section>
 
-            <!-- God is Love -->
+            <!-- Scene 6: Problem of Evil -->
             <section>
-                <div class="character">MOMOKO (CONT'D)</div>
-                <div class="dialogue">And yet… my faith insists: <span class="concept">God is love</span>. Not just loving, but Love itself. The very essence.</div>
+                <div class="slide-content">
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        You speak of understanding the current. But my faith speaks of a God who is the source of the river itself. And this… this horror of the bears, the slaughter, the collapse… it forces the oldest question to the surface. The one we call the problem of evil.
+                    </div>
 
-                <div class="narrator">She turns to face them, her eyes intense.</div>
+                    <div class="scene-direction">She stands, walking to the window. The bear is gone, leaving only ruins.</div>
 
-                <div class="character">MOMOKO (CONT'D)</div>
-                <div class="dialogue">So how do I reconcile Love itself with this? One explanation is free will. God gave us, and perhaps all creation, genuine freedom. The bears, in their animal consciousness, have a form of it. They chose to leave the forest. They choose violence. God does not stop them because to do so would make us puppets, and love cannot be forced upon puppets. Love requires freedom, even at the terrible cost of misused freedom.</div>
+                    <div class="character current-speaker">MOMOKO (CONT'D)</div>
+                    <div class="dialogue">
+                        If God is all-good, He would want to stop this. If He is all-powerful, He could stop this. If He is all-knowing, He would have foreseen and prevented it. Yet the bears rule Japan. So, where is God? Is He not good? Not powerful? Or… is this part of some plan we cannot fathom?
+                    </div>
+
+                    <div class="character current-speaker">KANJI</div>
+                    <div class="dialogue">
+                        It is a test! Like the story of Ibrahim and Ismail. God tested their obedience. This is a test for Japan, for us!
+                    </div>
+                </div>
             </section>
 
-            <!-- Yuki on Karma -->
+            <!-- Scene 7: God is Love -->
             <section>
-                <div class="character">YUKI</div>
-                <div class="dialogue">Your explanation of evil is logical, Momoko. But it is a spectator’s explanation. It explains the *why* of the stage, but not the *action* of the players. My Buddhist focus is on the action itself—<span class="concept">Karma</span>. Not fate, not punishment, but cause and effect. Volitional action creates seeds. These seeds bear fruit.</div>
+                <div class="slide-content">
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        Is it? To allow children to be torn apart by bears as a *test*? That does not sound like love. It sounds like cruelty. And yet… my faith insists: <span class="concept">God is love</span>. Not just loving, but Love itself. The very essence.
+                    </div>
 
-                <div class="character">YUKI (CONT'D)</div>
-                <div class="dialogue">If Kanji goes out of fearful obligation, the seed is tainted by fear. If Momoko goes as an imitation of Christ, the seed is watered with love but may carry a subtle pride of martyrdom. If I go… I must examine my own motives. Do I seek to end the cycle of suffering, or to escape my own? <span class="concept">Karma</span> is meticulous. The intention behind the sacrifice is as important as the act.</div>
+                    <div class="scene-direction">She turns to face them, her eyes intense.</div>
+
+                    <div class="character current-speaker">MOMOKO (CONT'D)</div>
+                    <div class="dialogue">
+                        So how do I reconcile Love itself with this? One explanation is free will. God gave us, and perhaps all creation, genuine freedom. The bears, in their animal consciousness, have a form of it. They chose to leave the forest. They choose violence. God does not stop them because to do so would make us puppets, and love cannot be forced upon puppets. Love requires freedom, even at the terrible cost of misused freedom.
+                    </div>
+                </div>
             </section>
 
-            <!-- The Turning Point -->
+            <!-- Scene 8: Discussion Continues -->
             <section>
-                <div class="narrator">An alarm clock on the wall ticks loudly. An hour has passed.</div>
+                <div class="slide-content">
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        So God values the principle of freedom more than the immediate prevention of suffering?
+                    </div>
 
-                <div class="character">MOMOKO</div>
-                <div class="dialogue">We’re going in circles. We’ve applied our concepts: <span class="concept">Chengfu</span>, <span class="concept">God is love</span>, <span class="concept">Ramadan</span>, <span class="concept">Karma</span>, the <span class="concept">explanation of evil</span>. They illuminate, but they don’t decide.</div>
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        It seems so. But it's not indifference. Love enters into the suffering. Christ on the cross is the symbol of that—God *with us* in the worst of it. Not a remote observer, but a fellow sufferer. So my choice, if I were to go… it would not be to appease a bear king for a Shinto god. It would be an act of entering into the brokenness, an imitation of that divine love. A willing descent into the consequence of a broken world, to save others from it. Not because I am forced, but because love, in the face of evil, chooses to sacrifice.
+                    </div>
 
-                <div class="character">MOMOKO (CONT'D)</div>
-                <div class="dialogue">Perhaps we are asking the wrong question. We’re asking "Who should die?" as if it’s a philosophical contest. Maybe the question is "Who can do this thing, and what will it *mean*?"</div>
+                    <div class="character current-speaker">KANJI</div>
+                    <div class="dialogue">
+                        That… is beautiful, Momoko. But it is also very Christian. It turns the Doraemon costume into a cross.
+                    </div>
+                </div>
             </section>
 
-            <!-- What Meaning Will It Have? -->
+            <!-- Scene 9: Karma Discussion -->
             <section>
-                <div class="character">MOMOKO (CONT'D)</div>
-                <div class="dialogue">Exactly. Kanji, if you go, your act becomes one of *Islamic* submission to the Divine Decree, a final, profound Ramadan sacrifice. It will be remembered, if anyone remains to remember, as a Muslim act.</div>
+                <div class="slide-content">
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        Perhaps. Or perhaps it's just what love looks like when the world is overrun by bears.
+                    </div>
 
-                <div class="character">MOMOKO (CONT'D)</div>
-                <div class="dialogue">Yuki, if you go, your act becomes one of *Buddhist-Daoist* compassion and karmic resolution. A release from cycles. An alignment with the Dao’s flow, even into the jaws of bears.</div>
+                    <div class="scene-direction">A faint, grim smile touches her lips.</div>
 
-                <div class="character">MOMOKO (CONT'D)</div>
-                <div class="dialogue">And if I go… it becomes a *Christian* act of sacrificial love. A participation in the divine response to evil. A statement that love enters the darkest place.</div>
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        Your explanation of evil is logical, Momoko. But it is a spectator's explanation. It explains the *why* of the stage, but not the *action* of the players. My Buddhist focus is on the action itself—<span class="concept">Karma</span>. Not fate, not punishment, but cause and effect. Volitional action creates seeds. These seeds bear fruit. The bears' violence is the fruit of countless causes—human encroachment, climate change, ecological imbalance. Our presence here is the fruit of being born at that specific time. And our decision today will plant a new seed with immense consequences.
+                    </div>
+                </div>
             </section>
 
-            <!-- The Decision Forms -->
+            <!-- Scene 10: Karma Continued -->
             <section>
-                <div class="character">MOMOKO (CONT'D)</div>
-                <div class="dialogue">So it’s not just who dies. It’s which story dies with them. Which face of the divine is presented to the Bear King. The Shinto master said the bears obey Doraemon. But *we* will fill that empty symbol with meaning. We will clothe a cartoon in theology.</div>
+                <div class="slide-content">
+                    <div class="scene-direction">She pours water from a pitcher into three cups, a deliberate, calming motion.</div>
 
-                <div class="narrator">A profound silence settles. The concept changes the room.</div>
+                    <div class="character current-speaker">YUKI (CONT'D)</div>
+                    <div class="dialogue">
+                        If Kanji goes out of fearful obligation, the seed is tainted by fear. If Momoko goes as an imitation of Christ, the seed is watered with love but may carry a subtle pride of martyrdom. If I go… I must examine my own motives. Do I seek to end the cycle of suffering, or to escape my own? Karma is meticulous. The intention behind the sacrifice is as important as the act.
+                    </div>
+
+                    <div class="character current-speaker">KANJI</div>
+                    <div class="dialogue">
+                        So we must not only decide *who*, but *with what mind*? That's impossible to purify!
+                    </div>
+                </div>
             </section>
 
-            <!-- Final Realizations -->
+            <!-- Scene 11: Buddhist Perspective -->
             <section>
-                <div class="character">YUKI</div>
-                <div class="dialogue">You, Momoko. You spoke of love not as a feeling, but as the nature of God. As a *person*. An act. You did not speak of imitating Christ as a transaction for salvation, but as entering into suffering because it is there, and love goes there. That… feels less karmically sticky.</div>
+                <div class="slide-content">
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        It is the work of a lifetime. We have two hours. The point is, we must be ruthlessly honest. This is not about earning a reward. In Buddhism, sacrifice for reward is still a transaction, binding you to the cycle. The ultimate goal is to act with such selfless compassion that you break the cycle. For the sake of all beings. Including the bears.
+                    </div>
 
-                <div class="character">MOMOKO</div>
-                <div class="dialogue">(Tears welling) I am afraid. I do not want to die. The thought of those bears… it is a primal horror.</div>
+                    <div class="scene-direction">Momoko and Kanji stare at her.</div>
 
-                <div class="character">YUKI</div>
-                <div class="dialogue">Of course. But your fear does not negate your nature. It contextualizes it. A sacrifice without fear is no sacrifice. It is just a transaction.</div>
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        Compassion… for the bears?
+                    </div>
+
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        They are suffering too. They are driven by a hunger they do not understand, a search for a mythical ruler. They are trapped in aggression and fear. They are part of the sentient world suffering from ignorance. A Bodhisattva would have compassion for them as well. So the act of going… if done with that ultimate, impartial compassion… could generate immense, liberating merit. Not for me, but for the situation itself.
+                    </div>
+                </div>
             </section>
 
-            <!-- Momoko's Decision -->
+            <!-- Scene 12: More Discussion -->
             <section>
-                <div class="narrator">Momoko looks out the window again. The sun is lower, casting long shadows through the broken city.</div>
+                <div class="slide-content">
+                    <div class="scene-direction">She sips her water.</div>
 
-                <div class="character">MOMOKO</div>
-                <div class="dialogue">If I do this… it is not because I believe the Shinto master’s myth. It is because I believe in the God who is love. And if Love has a place in this bear-ridden hell, it is beside the victim, becoming the victim, to stop the victimizing. Not by power, but by solidarity. Even if it looks like a fool in a Doraemon costume.</div>
+                    <div class="character current-speaker">YUKI (CONT'D)</div>
+                    <div class="dialogue">
+                        But I am not a Bodhisattva. I am Yuki, who is afraid. My <span class="concept">Chengfu</span> is mixed. I have Daoist detachment and Buddhist aspiration, but also a human will to live. So I must weigh this.
+                    </div>
 
-                <div class="narrator">She turns back. Her face is streaked with tears, but serene.</div>
+                    <div class="character current-speaker">KANJI</div>
+                    <div class="dialogue">
+                        This is too philosophical! We are talking about being torn apart! My faith gives a clearer path: submission to God's will. If it is God's will that I go, I go. Ramadan taught me submission. But how do we *know* God's will? The Prime Minister is not a prophet. The Shinto master is not my imam.
+                    </div>
 
-                <div class="character">MOMOKO (CONT'D)</div>
-                <div class="dialogue" style="color: #81C784; font-size: 1.3em;">I will go.</div>
-
-                <div class="narrator">The words hang in the air. Final.</div>
+                    <div class="scene-direction">He puts his head in his hands.</div>
+                </div>
             </section>
 
-            <!-- The Sacrifice -->
+            <!-- Scene 13: Kanji's Doubt -->
             <section>
-                <p class="scene-heading">EXT. BEAR KING'S LAIR - A PLAZA</p>
-                
-                <div class="narrator">A massive brown bear, scarred and majestic, sits on a makeshift throne of wrecked cars. Momoko is brought before it. She is trembling, the plastic head shaking.</div>
+                <div class="slide-content">
+                    <div class="character current-speaker">KANJI (CONT'D)</div>
+                    <div class="dialogue">
+                        I offered to go. But now… your words confuse me. Is my offer true submission, or just a desperate attempt to make sense of the chaos? To force God's hand?
+                    </div>
 
-                <div class="narrator">She kneels. Then, with a deep breath, she removes the Doraemon head. Her human face is pale, tear-stained, but calm. She looks the Bear King in the eyes.</div>
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        That is a brave introspection, Kanji.
+                    </div>
 
-                <div class="character">MOMOKO</div>
-                <div class="dialogue">(In a clear, carrying voice) The search is over. I am here. Now… let your people go. Go back to the forests. Leave the cities. The killing ends now.</div>
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        It is. And it touches on <span class="concept">Chengfu</span> again. Your innate nature, Kanji, is passionate and devout. That is your burden and your gift. To act against it would be a violence to yourself. To act solely from its fever pitch might be unwise. You must find its still center.
+                    </div>
+
+                    <div class="narrator">
+                        An alarm clock on the wall ticks loudly. An hour has passed.
+                    </div>
+                </div>
             </section>
 
-            <!-- The Resolution -->
+            <!-- Scene 14: Turning Point -->
             <section>
-                <div class="narrator">The Bear King stares at her. At the human face inside the myth. It sniffs the air. A long, tense moment.</div>
+                <div class="slide-content">
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        We're going in circles. We've applied our concepts: <span class="concept">Chengfu</span>, <span class="concept">God is love</span>, <span class="concept">Ramadan</span>, <span class="concept">Karma</span>, the <span class="concept">explanation of evil</span>. They illuminate, but they don't decide.
+                    </div>
 
-                <div class="narrator">Then, it rears up on its hind legs and lets out a roar that shakes the rubble. But it is not a roar of attack. It sounds like a command.</div>
+                    <div class="scene-direction">She walks back to the table, standing between them.</div>
 
-                <div class="narrator">All around, bears begin to disengage. They turn, and in a slow, solemn procession, they begin to move, heading north, towards the mountains.</div>
+                    <div class="character current-speaker">MOMOKO (CONT'D)</div>
+                    <div class="dialogue">
+                        Perhaps we are asking the wrong question. We're asking "Who should die?" as if it's a philosophical contest. Maybe the question is "Who can do this thing, and what will it *mean*?"
+                    </div>
 
-                <div class="narrator">Momoko watches them go. She puts the Doraemon head back on. She does not follow the bears immediately. She stands, a small, blue figure in the vast, ruined plaza, watching the exodus of her tormentors.</div>
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        Meaning is bestowed by the mind behind the act.
+                    </div>
+                </div>
             </section>
 
-            <!-- Final Voices -->
+            <!-- Scene 15: Meaning Analysis -->
             <section>
-                <div class="verse">On her face, through the plastic mouth of the costume, we see a glimpse of her human mouth. It is not smiling. But it is at peace.</div>
+                <div class="slide-content">
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        Exactly. Kanji, if you go, your act becomes one of *Islamic* submission to the Divine Decree, a final, profound Ramadan sacrifice. It will be remembered, if anyone remains to remember, as a Muslim act. It will link your faith to the salvation of Japan.
+                    </div>
 
-                <div class="character">YUKI</div>
-                <div class="dialogue">(V.O., whispering) <span class="concept">Chengfu</span> fulfilled.</div>
+                    <div class="character current-speaker">KANJI</div>
+                    <div class="dialogue">
+                        <span class="action">(Whispering)</span><br>
+                        That is… a heavy responsibility. To represent all of us…
+                    </div>
 
-                <div class="character">KANJI</div>
-                <div class="dialogue">(V.O., through tears) <span class="concept">God is love</span>.</div>
-
-                <div class="character">MOMOKO</div>
-                <div class="dialogue">(V.O., a gentle whisper) And love has driven out the fear.</div>
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        Yuki, if you go, your act becomes one of *Buddhist-Daoist* compassion and karmic resolution. A release from cycles. An alignment with the Dao's flow, even into the jaws of bears. It becomes a meditation made flesh.
+                    </div>
+                </div>
             </section>
 
-            <!-- Final Scene -->
+            <!-- Scene 16: More Meaning Analysis -->
             <section>
-                <div class="narrator">The Bear King looks back at her one last time, then turns and lumbers away, leading his kind home. Momoko takes a deep breath, and begins to walk, following the bears into the gathering dusk.</div>
+                <div class="slide-content">
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        And if I fail in my mindfulness at the final moment? If I scream in terror? The karma is then stained.
+                    </div>
 
-                <p class="scene-heading" style="margin-top: 50px;">[SCENE END]</p>
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        And if I go… it becomes a *Christian* act of sacrificial love. A participation in the divine response to evil. A statement that love enters the darkest place.
+                    </div>
+
+                    <div class="scene-direction">She looks at them both.</div>
+
+                    <div class="character current-speaker">MOMOKO (CONT'D)</div>
+                    <div class="dialogue">
+                        So it's not just who dies. It's which story dies with them. Which face of the divine is presented to the Bear King. The Shinto master said the bears obey Doraemon. But *we* will fill that empty symbol with meaning. We will clothe a cartoon in theology.
+                    </div>
+
+                    <div class="narrator">
+                        A profound silence settles. The concept changes the room.
+                    </div>
+                </div>
             </section>
 
-            <!-- Credits -->
+            <!-- Scene 17: Decision Making -->
             <section>
-                <h2>Theological Concepts Explored</h2>
-                <ul>
-                    <li><span class="concept">Chengfu</span> - The burden of innate nature</li>
-                    <li><span class="concept">God is Love</span> - The Christian response to evil</li>
-                    <li><span class="concept">Ramadan</span> - Sacrifice and submission in Islam</li>
-                    <li><span class="concept">Karma</span> - Intention and consequence in Buddhism</li>
-                    <li><span class="concept">The Problem of Evil</span> - Reconciling suffering with divine goodness</li>
-                </ul>
+                <div class="slide-content">
+                    <div class="character current-speaker">KANJI</div>
+                    <div class="dialogue">
+                        Then… it is not about our worthiness to die. It is about the message that is needed.
+                    </div>
+
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        What does Japan need to see in its sacrifice? What lesson for the survivors?
+                    </div>
+
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        A lesson of love? Of submission? Of compassionate release?
+                    </div>
+
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        Japan is a suffering, fragmented place. Shinto itself is animist, seeing spirit in all things, even bears. Perhaps what is needed is not a message from one pure tradition, but a synthesis. A gesture that acknowledges the interconnected suffering of all beings—human and bear—and seeks to end it without hatred.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scene 18: More Discussion -->
+            <section>
+                <div class="slide-content">
+                    <div class="character current-speaker">KANJI</div>
+                    <div class="dialogue">
+                        That sounds more like your path, Yuki.
+                    </div>
+
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        It does. But I am not pure. My synthesis is intellectual. My fear is visceral. My <span class="concept">Chengfu</span> may be to understand, not to do.
+                    </div>
+
+                    <div class="narrator">
+                        Another silence. The second hour begins to wane.
+                    </div>
+
+                    <div class="character current-speaker">KANJI</div>
+                    <div class="dialogue">
+                        I have been thinking. About your <span class="concept">God is love</span>, Momoko. And about submission. In Islam, God is Al-Wadud, the Loving. His will is an expression of that love, even when we cannot see it. To submit to that will is to trust in that love. My offer… it was not trust. It was a frantic bargain. "Take me so this ends." That is not loving submission. That is terror. I must… I must withdraw my offer. For now. I need to find the calmness (*sakinah*) to see rightly.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scene 19: Kanji's Realization -->
+            <section>
+                <div class="slide-content">
+                    <div class="scene-direction">He looks devastated but clearer.</div>
+
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        Thank you for your honesty, Kanji. It is a brave step.
+                    </div>
+
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        And I have been thinking of <span class="concept">Karma</span>. If I go seeking to be a Bodhisattva, the very seeking plants the seed of ego. The 'I' who will be a hero. The 'I' who will generate merit. It is a trap. True compassion is without a self who is compassionate. I… I do not know if I am capable of that. My action, however well-intentioned, might be karmically muddy. It might not bring the pure resolution this catastrophe needs.
+                    </div>
+
+                    <div class="scene-direction">She looks at Momoko, a new respect in her eyes.</div>
+                </div>
+            </section>
+
+            <!-- Scene 20: Yuki's Realization -->
+            <section>
+                <div class="slide-content">
+                    <div class="character current-speaker">YUKI (CONT'D)</div>
+                    <div class="dialogue">
+                        You, Momoko. You spoke of love not as a feeling, but as the nature of God. As a *person*. An act. You did not speak of imitating Christ as a transaction for salvation, but as entering into suffering because it is there, and love goes there. That… feels less karmically sticky. It is about the nature of the act itself, not its future fruit for the actor.
+                    </div>
+
+                    <div class="scene-direction">Momoko is taken aback. She sinks into her chair.</div>
+
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        You're pointing at me.
+                    </div>
+
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        I am observing you. Your <span class="concept">Chengfu</span>… you were calm from the start. You did not offer impulsively or retreat into complex philosophy. You stated the problem of evil squarely and offered the theological answer not as a defense of God, but as a description of the battlefield. Your nature seems to be one of… grounded faith. Not blind, but seeing the horror and still speaking of love.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scene 21: Final Decision -->
+            <section>
+                <div class="slide-content">
+                    <div class="character current-speaker">KANJI</div>
+                    <div class="dialogue">
+                        It's true. When you spoke of God suffering with us… it did not feel like a theory. It felt like a truth you lived.
+                    </div>
+
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        <span class="action">(Tears welling)</span><br>
+                        I am afraid. I do not want to die. The thought of those bears… it is a primal horror.
+                    </div>
+
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        Of course. But your fear does not negate your nature. It contextualizes it. A sacrifice without fear is no sacrifice. It is just a transaction.
+                    </div>
+
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        So you think… my going would be the right meaning? The needed story?
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scene 22: The Conclusion -->
+            <section>
+                <div class="slide-content">
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        I think of the three paths, the Christian one—of love entering freely into the heart of evil to break its power—is the one that most directly addresses the moment. It does not seek to escape the cycle like Buddhism, or submit to an inscrutable will like Islam, though it has echoes of both. It confronts. It engages. It takes the absurd costume and makes it a vessel for the deepest truth of your tradition. For a nation in despair, the story of a willing, loving sacrifice may be the seed that needs planting.
+                    </div>
+
+                    <div class="character current-speaker">KANJI</div>
+                    <div class="dialogue">
+                        <span class="action">(Softly)</span><br>
+                        "For God so loved the world…" It is a powerful story. Perhaps it is the one that can reach even a Bear King's heart. Or at least, the hearts of the people who will hear of it.
+                    </div>
+
+                    <div class="narrator">
+                        Momoko looks out the window again. The sun is lower, casting long shadows through the broken city.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scene 23: Momoko's Decision -->
+            <section>
+                <div class="slide-content">
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        If I do this… it is not because I believe the Shinto master's myth. It is because I believe in the God who is love. And if Love has a place in this bear-ridden hell, it is beside the victim, becoming the victim, to stop the victimizing. Not by power, but by solidarity. Even if it looks like a fool in a Doraemon costume.
+                    </div>
+
+                    <div class="scene-direction">She turns back. Her face is streaked with tears, but serene.</div>
+
+                    <div class="character current-speaker">MOMOKO (CONT'D)</div>
+                    <div class="dialogue" style="color: #81C784; font-size: 1.5em; text-align: center; padding: 20px;">
+                        I will go.
+                    </div>
+
+                    <div class="narrator">
+                        The words hang in the air. Final.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scene 24: Reactions -->
+            <section>
+                <div class="slide-content">
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        <span class="action">(Nods, a deep bow of respect)</span><br>
+                        Your <span class="concept">Karma</span> is clear. Your intention is for love, not for self. May it bring an end to this suffering.
+                    </div>
+
+                    <div class="character current-speaker">KANJI</div>
+                    <div class="dialogue">
+                        <span class="action">(His voice choked)</span><br>
+                        I will pray for you, Momoko. I will remember this as the true meaning of sacrifice. You have… you have helped me understand submission better. It is not blind. It is trusting in Love.
+                    </div>
+
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        Thank you, both of you. You have helped me see my own faith more clearly. The problem of evil… it is not solved in a textbook. It is answered on the ground. In acts. However small. However strange.
+                    </div>
+
+                    <div class="scene-direction">A buzzer sounds. The two hours are up.</div>
+                </div>
+            </section>
+
+            <!-- Scene 25: The Costume -->
+            <section>
+                <div class="slide-content">
+                    <div class="scene-direction">The door opens. The Prime Minister and officials stand there, holding a large box. Inside, we glimpse blue fur, a red plastic tail.</div>
+
+                    <div class="character current-speaker">PRIME MINISTER</div>
+                    <div class="dialogue">
+                        Have you decided?
+                    </div>
+
+                    <div class="scene-direction">Momoko steps forward. She does not look at the box. She looks at the Prime Minister, her voice steady.</div>
+
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        I have. I will be Doraemon.
+                    </div>
+
+                    <div class="scene-direction">The officials look relieved, then somber. One approaches with the box.</div>
+
+                    <div class="character current-speaker">MOMOKO (CONT'D)</div>
+                    <div class="dialogue">
+                        <span class="action">(To Yuki and Kanji)</span><br>
+                        Go home. Tell them… tell them love went to the bears. And that love is never wasted.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scene 26: Transition -->
+            <section>
+                <div class="slide-content">
+                    <div class="scene-direction">Yuki and Kanji are escorted out, looking back with a mixture of grief, awe, and guilt. The door closes, leaving Momoko alone with the government officials.</div>
+
+                    <p class="scene-heading" style="margin-top: 50px;">EXT. TOKYO STREET - LATER</p>
+
+                    <div class="narrator">
+                        Momoko, wearing the full, slightly ridiculous Doraemon costume, is led towards the bear-occupied zone.
+                    </div>
+
+                    <div class="narrator">
+                        Momoko, wearing the full, slightly ridiculous Doraemon costume, head and all, is led by a military escort towards the edge of the occupied zone. Bears watch from the ruins. They do not attack. They seem… curious.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scene 27: Watching -->
+            <section>
+                <div class="slide-content">
+                    <p class="scene-heading">INT. GOVERNMENT OFFICE - CONTINUOUS</p>
+
+                    <div class="narrator">
+                        Yuki and Kanji watch from a monitor, holding each other's hands for support.
+                    </div>
+
+                    <p class="scene-heading" style="margin-top: 40px;">EXT. BEAR KING'S LAIR - A PLAZA</p>
+
+                    <div class="narrator">
+                        A massive brown bear, scarred and majestic, sits on a makeshift throne of wrecked cars. Momoko is brought before it. She is trembling, the plastic head shaking.
+                    </div>
+
+                    <div class="narrator">
+                        She kneels. Then, with a deep breath, she removes the Doraemon head. Her human face is pale, tear-stained, but calm. She looks the Bear King in the eyes.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scene 28: The Confrontation -->
+            <section>
+                <div class="slide-content">
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        <span class="action">(In a clear, carrying voice)</span><br>
+                        The search is over. I am here. Now… let your people go. Go back to the forests. Leave the cities. The killing ends now.
+                    </div>
+
+                    <div class="narrator">
+                        The Bear King stares at her. At the human face inside the myth. It sniffs the air. A long, tense moment.
+                    </div>
+
+                    <div class="narrator">
+                        Then, it rears up on its hind legs and lets out a roar that shakes the rubble. But it is not a roar of attack. It sounds like a command.
+                    </div>
+
+                    <div class="narrator">
+                        All around, bears begin to disengage. They turn, and in a slow, solemn procession, they begin to move, heading north, towards the mountains.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scene 29: The Resolution -->
+            <section>
+                <div class="slide-content">
+                    <div class="narrator">
+                        Momoko watches them go. A single soldier remains, far behind her. She puts the Doraemon head back on. She does not follow the bears immediately. She stands, a small, blue figure in the vast, ruined plaza, watching the exodus of her tormentors.
+                    </div>
+
+                    <div class="verse">
+                        On her face, through the plastic mouth of the costume, we see a glimpse of her human mouth. It is not smiling. But it is at peace.
+                    </div>
+
+                    <div class="character current-speaker">YUKI</div>
+                    <div class="dialogue">
+                        <span class="action">(V.O., whispering)</span><br>
+                        <span class="concept">Chengfu</span> fulfilled.
+                    </div>
+
+                    <div class="character current-speaker">KANJI</div>
+                    <div class="dialogue">
+                        <span class="action">(V.O., through tears)</span><br>
+                        <span class="concept">God is love</span>.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scene 30: Finale -->
+            <section>
+                <div class="slide-content">
+                    <div class="character current-speaker">MOMOKO</div>
+                    <div class="dialogue">
+                        <span class="action">(V.O., a gentle whisper)</span><br>
+                        And love has driven out the fear.
+                    </div>
+
+                    <div class="narrator">
+                        The Bear King looks back at her one last time, then turns and lumbers away, leading his kind home. Momoko takes a deep breath, and begins to walk, following the bears into the gathering dusk.
+                    </div>
+
+                    <p class="scene-heading" style="margin-top: 100px;">[SCENE END]</p>
+
+                    <div class="word-count" style="margin-top: 50px;">FINAL WORD COUNT: 3,347</div>
+                </div>
+            </section>
+
+            <!-- Credits Slide -->
+            <section>
+                <div class="slide-content">
+                    <h2 style="color: #BA68C8; margin-bottom: 50px;">Theological Concepts Explored</h2>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 40px 0;">
+                        <div style="background: rgba(129, 199, 132, 0.1); padding: 20px; border-radius: 10px;">
+                            <h3 style="color: #81C784;">Chengfu</h3>
+                            <p>The burden of innate nature - Daoist concept of one's essential, unhewn nature</p>
+                        </div>
+                        
+                        <div style="background: rgba(255, 183, 77, 0.1); padding: 20px; border-radius: 10px;">
+                            <h3 style="color: #FFB74D;">God is Love</h3>
+                            <p>The Christian response to evil - God as the essence of love entering suffering</p>
+                        </div>
+                        
+                        <div style="background: rgba(79, 195, 247, 0.1); padding: 20px; border-radius: 10px;">
+                            <h3 style="color: #4FC3F7;">Ramadan</h3>
+                            <p>Sacrifice and submission in Islam - Final sacrifice as ultimate act of faith</p>
+                        </div>
+                        
+                        <div style="background: rgba(186, 104, 200, 0.1); padding: 20px; border-radius: 10px;">
+                            <h3 style="color: #BA68C8;">Karma</h3>
+                            <p>Intention and consequence in Buddhism - The purity of intention in sacrifice</p>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 50px;">
+                        <p style="color: #FFF176; font-style: italic;">
+                            "So it's not just who dies. It's which story dies with them."
+                        </p>
+                        <p style="color: #E0E0E0; margin-top: 20px;">— Momoko</p>
+                    </div>
+                </div>
             </section>
         </div>
     </div>
@@ -283,10 +920,45 @@
         Reveal.initialize({
             controls: true,
             progress: true,
-            center: true,
+            center: false,
             hash: true,
             transition: 'convex',
-            backgroundTransition: 'slide'
+            backgroundTransition: 'slide',
+            width: '100%',
+            height: '100%',
+            margin: 0,
+            minScale: 1,
+            maxScale: 1,
+            // Add keyboard shortcuts for scrolling
+            keyboard: {
+                38: 'prev', // up arrow
+                40: 'next', // down arrow
+            }
+        });
+        
+        // Add class to indicate scrollable slides
+        document.querySelector('.reveal').classList.add('has-scrollbar');
+        
+        // Highlight current speaker
+        Reveal.on('slidechanged', function(event) {
+            // Remove previous highlights
+            document.querySelectorAll('.character').forEach(char => {
+                char.classList.remove('current-speaker');
+            });
+            
+            // Highlight first character on each slide
+            const firstChar = event.currentSlide.querySelector('.character');
+            if (firstChar) {
+                firstChar.classList.add('current-speaker');
+            }
+        });
+        
+        // Initialize first slide
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstChar = document.querySelector('.character');
+            if (firstChar) {
+                firstChar.classList.add('current-speaker');
+            }
         });
     </script>
 </body>
