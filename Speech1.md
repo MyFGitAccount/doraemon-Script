@@ -5,11 +5,6 @@
 **NARRATOR**
 Tokyo, 2026. A city held by bears. In a secure room, three people—Momoko, Yuki, and Kanji—face an impossible choice. One must become Doraemon and die to save Japan. They have two hours to decide.
 
-The room is stark, gray, and soundproofed. A single table with three chairs. One wall is a reinforced window looking out onto a silent, overgrown Tokyo street. A brown bear lumbers past in the distance.
-
-Three people sit around the table: MOMOKO (25, thoughtful, calm), YUKI (25, sharp-eyed, contemplative), and KANJI (25, anxious, devout).
-
-A heavy door clicks shut behind the retreating figure of a government official. The silence is oppressive.
 
 **KANJI**
 (Exhaling shakily)
