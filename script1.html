@@ -31,7 +31,7 @@
             height: 100vh;
             display: flex !important;
             flex-direction: column;
-            padding: 20px;
+            padding: 10px;
             box-sizing: border-box;
             overflow-y: auto !important;
             overflow-x: hidden !important;
@@ -45,7 +45,7 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 60px;
+            padding: 20px;
             flex: 1;
         }
         
@@ -59,60 +59,63 @@
         .character {
             color: #4FC3F7;
             font-weight: bold;
-            margin-top: 25px;
-            font-size: 2em;
+            margin-top: 15px;
+            font-size: 1.3em;
         }
         
         /* Dialogue styling */
         .dialogue {
-            margin-left: 40px;
+            margin-left: 15px;
             font-style: italic;
             color: #E0E0E0;
-            margin-bottom: 15px;
-            line-height: 1.6;
+            margin-bottom: 10px;
+            line-height: 1.5;
+            font-size: 1em;
         }
         
         /* Parenthetical action styling */
         .dialogue .action {
             color: #B0BEC5;
             font-style: normal;
+            font-size: 0.9em;
         }
         
         /* Narrator styling */
         .narrator {
             color: #FFB74D;
             font-style: italic;
-            margin: 20px 0;
-            padding: 15px;
+            margin: 15px 0;
+            padding: 10px;
             background: rgba(255, 183, 77, 0.1);
             border-radius: 5px;
-            line-height: 1.6;
+            line-height: 1.5;
+            font-size: 0.95em;
         }
         
         /* Concept highlighting */
         .concept {
             color: #81C784;
             font-weight: bold;
-            text-shadow: 0 0 10px rgba(129, 199, 132, 0.3);
+            text-shadow: 0 0 5px rgba(129, 199, 132, 0.3);
         }
         
         /* Scene heading styling */
         .scene-heading {
             color: #BA68C8;
-            font-size: 1.3em;
-            margin-bottom: 30px;
+            font-size: 1em;
+            margin-bottom: 20px;
             text-align: center;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
         
         /* Scene directions */
         .scene-direction {
             color: #90A4AE;
             font-style: italic;
-            margin: 10px 0 20px 20px;
-            font-size: 0.95em;
+            margin: 8px 0 15px 15px;
+            font-size: 0.85em;
         }
         
         /* Verse/quote styling */
@@ -120,36 +123,36 @@
             color: #FFF176;
             font-style: italic;
             text-align: center;
-            margin: 40px 0;
-            font-size: 1.1em;
-            padding: 20px;
-            border-left: 3px solid #FFF176;
-            border-right: 3px solid #FFF176;
+            margin: 25px 0;
+            font-size: 0.95em;
+            padding: 15px;
+            border-left: 2px solid #FFF176;
+            border-right: 2px solid #FFF176;
             background: rgba(255, 241, 118, 0.05);
         }
         
         /* Word count display */
         .word-count {
             color: #78909C;
-            font-size: 0.9em;
+            font-size: 0.8em;
             text-align: right;
-            margin-top: 30px;
+            margin-top: 20px;
             font-style: italic;
         }
         
         /* Custom scrollbar styling */
         .reveal .slides section::-webkit-scrollbar {
-            width: 10px;
+            width: 6px;
         }
         
         .reveal .slides section::-webkit-scrollbar-track {
             background: rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
+            border-radius: 3px;
         }
         
         .reveal .slides section::-webkit-scrollbar-thumb {
             background: linear-gradient(to bottom, #4FC3F7, #BA68C8);
-            border-radius: 5px;
+            border-radius: 3px;
         }
         
         .reveal .slides section::-webkit-scrollbar-thumb:hover {
@@ -159,34 +162,145 @@
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .slide-content {
-                padding: 20px 30px;
+                padding: 15px;
             }
             
             .character {
                 font-size: 1.1em;
-                margin-top: 20px;
+                margin-top: 12px;
             }
             
             .dialogue {
-                margin-left: 20px;
-                font-size: 1.95em;
+                margin-left: 10px;
+                font-size: 0.95em;
+                line-height: 1.4;
+            }
+            
+            .narrator {
+                font-size: 0.9em;
+                margin: 10px 0;
+                padding: 8px;
+            }
+            
+            .scene-heading {
+                font-size: 0.9em;
+                margin-bottom: 15px;
+            }
+            
+            .scene-direction {
+                font-size: 0.8em;
+                margin-left: 10px;
+            }
+            
+            .verse {
+                font-size: 0.9em;
+                padding: 10px;
+                margin: 15px 0;
+            }
+            
+            /* Reduce spacing on mobile */
+            .reveal .slides section {
+                padding: 5px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .slide-content {
+                padding: 10px;
+            }
+            
+            .character {
+                font-size: 1em;
+                margin-top: 10px;
+            }
+            
+            .dialogue {
+                margin-left: 8px;
+                font-size: 0.9em;
+                line-height: 1.3;
+            }
+            
+            .dialogue .action {
+                font-size: 0.85em;
+            }
+            
+            .narrator {
+                font-size: 0.85em;
+                padding: 6px;
+            }
+            
+            .scene-heading {
+                font-size: 0.85em;
+            }
+            
+            .verse {
+                font-size: 0.85em;
+                padding: 8px;
+            }
+            
+            /* Adjust title for mobile */
+            .reveal .slides section:first-child .slide-content h1 {
+                font-size: 2em !important;
+            }
+            
+            .reveal .slides section:first-child .slide-content h2 {
+                font-size: 1.2em !important;
+            }
+        }
+        
+        /* For very small screens */
+        @media (max-width: 320px) {
+            .character {
+                font-size: 0.95em;
+            }
+            
+            .dialogue {
+                font-size: 0.85em;
+            }
+            
+            .reveal .slides section:first-child .slide-content h1 {
+                font-size: 1.8em !important;
             }
         }
         
         /* Fade-in animation for new content */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
         .reveal .slides section .slide-content > * {
-            animation: fadeIn 0.5s ease-out;
+            animation: fadeIn 0.3s ease-out;
         }
         
         /* Highlight current speaker */
         .character.current-speaker {
             color: #FF8A65;
-            text-shadow: 0 0 10px rgba(255, 138, 101, 0.5);
+            text-shadow: 0 0 5px rgba(255, 138, 101, 0.5);
+        }
+        
+        /* Better line height for mobile */
+        body {
+            line-height: 1.4;
+        }
+        
+        /* Improve touch targets on mobile */
+        @media (hover: none) and (pointer: coarse) {
+            .reveal .controls button {
+                min-width: 40px;
+                min-height: 40px;
+            }
+            
+            .dialogue, .character, .narrator {
+                padding: 2px 0;
+            }
+        }
+        
+        /* Fix for very long words on mobile */
+        .dialogue, .narrator {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
         }
     </style>
 </head>
@@ -196,13 +310,13 @@
             <!-- Title Slide -->
             <section>
                 <div class="slide-content">
-                    <h1 style="color: #4FC3F7; font-size: 3em; margin-bottom: 30px;">THE DORAEMON SACRIFICE</h1>
-                    <h2 style="color: #FFB74D; margin-bottom: 20px;">A Theological Dilemma</h2>
-                    <div style="margin-top: 50px;">
-                        <p style="color: #81C784; font-size: 1.2em;">Tokyo, 2026</p>
-                        <p style="color: #E0E0E0; font-style: italic;">Based on the original script</p>
+                    <h1 style="color: #4FC3F7; font-size: 2.5em; margin-bottom: 20px;">THE DORAEMON SACRIFICE</h1>
+                    <h2 style="color: #FFB74D; margin-bottom: 15px; font-size: 1.5em;">A Theological Dilemma</h2>
+                    <div style="margin-top: 30px;">
+                        <p style="color: #81C784; font-size: 1.1em;">Tokyo, 2026</p>
+                        <p style="color: #E0E0E0; font-style: italic; font-size: 0.9em;">Based on the original script</p>
                     </div>
-                    <div class="word-count" style="margin-top: 100px;">FINAL WORD COUNT: 3,347</div>
+                    <div class="word-count" style="margin-top: 50px;">FINAL WORD COUNT: 3,347</div>
                 </div>
             </section>
 
@@ -711,7 +825,7 @@
                     <div class="scene-direction">She turns back. Her face is streaked with tears, but serene.</div>
 
                     <div class="character current-speaker">MOMOKO (CONT'D)</div>
-                    <div class="dialogue" style="color: #81C784; font-size: 1.5em; text-align: center; padding: 20px;">
+                    <div class="dialogue" style="color: #81C784; font-size: 1.2em; text-align: center; padding: 15px;">
                         I will go.
                     </div>
 
@@ -777,7 +891,7 @@
                 <div class="slide-content">
                     <div class="scene-direction">Yuki and Kanji are escorted out, looking back with a mixture of grief, awe, and guilt. The door closes, leaving Momoko alone with the government officials.</div>
 
-                    <p class="scene-heading" style="margin-top: 50px;">EXT. TOKYO STREET - LATER</p>
+                    <p class="scene-heading" style="margin-top: 30px;">EXT. TOKYO STREET - LATER</p>
 
                     <div class="narrator">
                         Momoko, wearing the full, slightly ridiculous Doraemon costume, is led towards the bear-occupied zone.
@@ -798,7 +912,7 @@
                         Yuki and Kanji watch from a monitor, holding each other's hands for support.
                     </div>
 
-                    <p class="scene-heading" style="margin-top: 40px;">EXT. BEAR KING'S LAIR - A PLAZA</p>
+                    <p class="scene-heading" style="margin-top: 20px;">EXT. BEAR KING'S LAIR - A PLAZA</p>
 
                     <div class="narrator">
                         A massive brown bear, scarred and majestic, sits on a makeshift throne of wrecked cars. Momoko is brought before it. She is trembling, the plastic head shaking.
@@ -871,44 +985,44 @@
                         The Bear King looks back at her one last time, then turns and lumbers away, leading his kind home. Momoko takes a deep breath, and begins to walk, following the bears into the gathering dusk.
                     </div>
 
-                    <p class="scene-heading" style="margin-top: 100px;">[SCENE END]</p>
+                    <p class="scene-heading" style="margin-top: 50px;">[SCENE END]</p>
 
-                    <div class="word-count" style="margin-top: 50px;">FINAL WORD COUNT: 3,347</div>
+                    <div class="word-count" style="margin-top: 30px;">FINAL WORD COUNT: 3,347</div>
                 </div>
             </section>
 
             <!-- Credits Slide -->
             <section>
                 <div class="slide-content">
-                    <h2 style="color: #BA68C8; margin-bottom: 50px;">Theological Concepts Explored</h2>
+                    <h2 style="color: #BA68C8; margin-bottom: 30px; font-size: 1.3em;">Theological Concepts Explored</h2>
                     
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 40px 0;">
-                        <div style="background: rgba(129, 199, 132, 0.1); padding: 20px; border-radius: 10px;">
-                            <h3 style="color: #81C784;">Chengfu</h3>
-                            <p>The burden of innate nature - Daoist concept of one's essential, unhewn nature</p>
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 15px; margin: 20px 0;">
+                        <div style="background: rgba(129, 199, 132, 0.1); padding: 15px; border-radius: 8px;">
+                            <h3 style="color: #81C784; font-size: 1.1em;">Chengfu</h3>
+                            <p style="font-size: 0.9em;">The burden of innate nature - Daoist concept of one's essential, unhewn nature</p>
                         </div>
                         
-                        <div style="background: rgba(255, 183, 77, 0.1); padding: 20px; border-radius: 10px;">
-                            <h3 style="color: #FFB74D;">God is Love</h3>
-                            <p>The Christian response to evil - God as the essence of love entering suffering</p>
+                        <div style="background: rgba(255, 183, 77, 0.1); padding: 15px; border-radius: 8px;">
+                            <h3 style="color: #FFB74D; font-size: 1.1em;">God is Love</h3>
+                            <p style="font-size: 0.9em;">The Christian response to evil - God as the essence of love entering suffering</p>
                         </div>
                         
-                        <div style="background: rgba(79, 195, 247, 0.1); padding: 20px; border-radius: 10px;">
-                            <h3 style="color: #4FC3F7;">Ramadan</h3>
-                            <p>Sacrifice and submission in Islam - Final sacrifice as ultimate act of faith</p>
+                        <div style="background: rgba(79, 195, 247, 0.1); padding: 15px; border-radius: 8px;">
+                            <h3 style="color: #4FC3F7; font-size: 1.1em;">Ramadan</h3>
+                            <p style="font-size: 0.9em;">Sacrifice and submission in Islam - Final sacrifice as ultimate act of faith</p>
                         </div>
                         
-                        <div style="background: rgba(186, 104, 200, 0.1); padding: 20px; border-radius: 10px;">
-                            <h3 style="color: #BA68C8;">Karma</h3>
-                            <p>Intention and consequence in Buddhism - The purity of intention in sacrifice</p>
+                        <div style="background: rgba(186, 104, 200, 0.1); padding: 15px; border-radius: 8px;">
+                            <h3 style="color: #BA68C8; font-size: 1.1em;">Karma</h3>
+                            <p style="font-size: 0.9em;">Intention and consequence in Buddhism - The purity of intention in sacrifice</p>
                         </div>
                     </div>
                     
-                    <div style="text-align: center; margin-top: 50px;">
-                        <p style="color: #FFF176; font-style: italic;">
+                    <div style="text-align: center; margin-top: 30px;">
+                        <p style="color: #FFF176; font-style: italic; font-size: 0.95em;">
                             "So it's not just who dies. It's which story dies with them."
                         </p>
-                        <p style="color: #E0E0E0; margin-top: 20px;">— Momoko</p>
+                        <p style="color: #E0E0E0; margin-top: 15px; font-size: 0.9em;">— Momoko</p>
                     </div>
                 </div>
             </section>
@@ -933,7 +1047,14 @@
             keyboard: {
                 38: 'prev', // up arrow
                 40: 'next', // down arrow
-            }
+            },
+            // Mobile specific settings
+            touch: true,
+            hideAddressBar: true,
+            previewLinks: false,
+            // Improve mobile performance
+            mobileView: 'CURRENT',
+            showNotes: false
         });
         
         // Add class to indicate scrollable slides
@@ -959,7 +1080,22 @@
             if (firstChar) {
                 firstChar.classList.add('current-speaker');
             }
+            
+            // Improve mobile touch experience
+            if ('ontouchstart' in window) {
+                document.body.style.cursor = 'pointer';
+            }
         });
+        
+        // Prevent zoom on double-tap for mobile
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
     </script>
 </body>
 </html>
