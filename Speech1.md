@@ -1,10 +1,9 @@
-
-
-
-
 **[SCENE START]**
 
 **INT. BARE, SECURE GOVERNMENT CONFERENCE ROOM - DAY - 2026**
+
+**NARRATOR**
+Tokyo, 2026. A city held by bears. In a secure room, three people—Momoko, Yuki, and Kanji—face an impossible choice. One must become Doraemon and die to save Japan. They have two hours to decide.
 
 The room is stark, gray, and soundproofed. A single table with three chairs. One wall is a reinforced window looking out onto a silent, overgrown Tokyo street. A brown bear lumbers past in the distance.
 
@@ -24,6 +23,7 @@ To die.
 Nods slowly, her eyes fixed on the bear outside.
 The Prime Minister made that quite clear. One Doraemon. One sacrifice. The Bear King accepts nothing less. The Shinto master was… specific.
 
+**NARRATOR**
 A pause. The weight of the absurdity and the horror sits with them.
 
 **KANJI**
@@ -35,6 +35,7 @@ But the bears are real. And 70% of our country… gone. The world is upside down
 **YUKI**
 The reality is, one of us must wear the costume and die. The question is *who*. And *why*. We are not just three names. We are… what we believe. They told us that. It’s why they mentioned our faiths. They expect our beliefs to guide us. Or to conflict.
 
+**NARRATOR**
 Another long silence. Kanji fidgets, his lips moving in silent prayer.
 
 **KANJI**
@@ -147,6 +148,7 @@ That is a brave introspection, Kanji.
 **YUKI**
 It is. And it touches on **Chengfu** again. Your innate nature, Kanji, is passionate and devout. That is your burden and your gift. To act against it would be a violence to yourself. To act solely from its fever pitch might be unwise. You must find its still center.
 
+**NARRATOR**
 An alarm clock on the wall ticks loudly. An hour has passed.
 
 **MOMOKO**
@@ -161,14 +163,14 @@ Perhaps we are asking the wrong question. We’re asking “Who should die?” a
 Meaning is bestowed by the mind behind the act.
 
 **MOMOKO**
-Exactly. Kanji, if you go, your act becomes one of *Islam* submission to the Divine Decree, a final, profound Ramadan sacrifice. It will be remembered, if anyone remains to remember, as a Muslim act. It will link your faith to the salvation of Japan.
+Exactly. Kanji, if you go, your act becomes one of *Islamic* submission to the Divine Decree, a final, profound Ramadan sacrifice. It will be remembered, if anyone remains to remember, as a Muslim act. It will link your faith to the salvation of Japan.
 
 **KANJI**
 (Whispering)
 That is… a heavy responsibility. To represent all of us…
 
 **MOMOKO**
-Yuki, if you go, your act becomes one of *Buddhist-Daoist* compassion and karmic resolution. A release from cycles. A alignment with the Dao’s flow, even into the jaws of bears. It becomes a meditation made flesh.
+Yuki, if you go, your act becomes one of *Buddhist-Daoist* compassion and karmic resolution. A release from cycles. An alignment with the Dao’s flow, even into the jaws of bears. It becomes a meditation made flesh.
 
 **YUKI**
 And if I fail in my mindfulness at the final moment? If I scream in terror? The karma is then stained.
@@ -181,6 +183,7 @@ She looks at them both.
 **MOMOKO (CONT'D)**
 So it’s not just who dies. It’s which story dies with them. Which face of the divine is presented to the Bear King. The Shinto master said the bears obey Doraemon. But *we* will fill that empty symbol with meaning. We will clothe a cartoon in theology.
 
+**NARRATOR**
 A profound silence settles. The concept changes the room.
 
 **KANJI**
@@ -201,6 +204,7 @@ That sounds more like your path, Yuki.
 **YUKI**
 It does. But I am not pure. My synthesis is intellectual. My fear is visceral. My **Chengfu** may be to understand, not to do.
 
+**NARRATOR**
 Another silence. The second hour begins to wane.
 
 **KANJI**
@@ -247,6 +251,7 @@ I think of the three paths, the Christian one—of love entering freely into the
 (Softly)
 “For God so loved the world…” It is a powerful story. Perhaps it is the one that can reach even a Bear King’s heart. Or at least, the hearts of the people who will hear of it.
 
+**NARRATOR**
 Momoko looks out the window again. The sun is lower, casting long shadows through the broken city.
 
 **MOMOKO**
@@ -257,6 +262,7 @@ She turns back. Her face is streaked with tears, but serene.
 **MOMOKO (CONT'D)**
 I will go.
 
+**NARRATOR**
 The words hang in the air. Final.
 
 **YUKI**
@@ -292,6 +298,9 @@ Yuki and Kanji are escorted out, looking back with a mixture of grief, awe, and 
 
 **EXT. TOKYO STREET - LATER**
 
+**NARRATOR**
+Momoko, wearing the full, slightly ridiculous Doraemon costume, is led towards the bear-occupied zone.
+
 Momoko, wearing the full, slightly ridiculous Doraemon costume, head and all, is led by a military escort towards the edge of the occupied zone. Bears watch from the ruins. They do not attack. They seem… curious.
 
 **INT. GOVERNMENT OFFICE - CONTINUOUS**
@@ -308,6 +317,7 @@ She kneels. Then, with a deep breath, she removes the Doraemon head. Her human f
 (In a clear, carrying voice)
 The search is over. I am here. Now… let your people go. Go back to the forests. Leave the cities. The killing ends now.
 
+**NARRATOR**
 The Bear King stares at her. At the human face inside the myth. It sniffs the air. A long, tense moment.
 
 Then, it rears up on its hind legs and lets out a roar that shakes the rubble. But it is not a roar of attack. It sounds like a command.
@@ -330,8 +340,9 @@ God is love.
 (V.O., a gentle whisper)
 And love has driven out the fear.
 
+**NARRATOR**
 The Bear King looks back at her one last time, then turns and lumbers away, leading his kind home. Momoko takes a deep breath, and begins to walk, following the bears into the gathering dusk.
 
 **[SCENE END]**
 
-**FINAL WORD COUNT: 3, 248**
+**FINAL WORD COUNT: 3,347**
