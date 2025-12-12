@@ -8,6 +8,48 @@ Tokyo, 2026. A city held by bears. In a secure room, three people—Momoko, Yuki
 The PRIME MINISTER, a man eroded by crisis, stands before them. Two officials flank him, one holding a plain, sealed dossier.
 
 **PRIME MINISTER**
+Master, we have no time left. The final defensive line will not hold another night. Your previous counsel was… opaque. I need clarity. You said there was a way. What is it?
+
+**SHINTO MASTER**
+(Without looking up)
+You have tried the fist. You have tried the word. They have failed. The kami of the mountain are not negotiating. They are reclaiming. The bears are merely their flesh.
+
+**PRIME MINISTER**
+Then we are finished.
+
+**SHINTO MASTER**
+(His finger traces a line on the scroll)
+There is one story they will still hear. An older story. From before the cities. A story of a blue herald from the stars, who leads the lost home to the untouched forest.
+
+**PRIME MINISTER**
+A children’s story? Doraemon?
+
+**SHINTO MASTER**
+The symbol does not matter. The belief does. The animal spirits believe this. Their king dreams of this herald. You must give him the herald. The form must be filled.
+
+**PRIME MINISTER**
+How? We send in an actor? A drone?
+
+**SHINTO MASTER**
+(He looks up, his eyes like dark water)
+No. The vessel must be alive. It must be true. It must be born under the correct stars, at the precise turning of the last millennium. When the celestial river was aligned as it is in the story. Only then will the king recognize the scent. Only then will the bears obey.
+
+**PRIME MINISTER**
+You’re talking about a person.
+
+**SHINTO MASTER**
+I am talking about a key. You have the records. Find those born at 1:11 in the morning, on the first day of 2001. The stars have left their mark on three souls.
+
+**PRIME MINISTER**
+And if we find them? What happens to the one who goes?
+
+**SHINTO MASTER**
+They will put on the blue skin. They will walk to the king. They will speak the command. And the bears will turn and follow them north, back to the deep forests.
+
+Bring the three here. Let them choose among themselves which key turns the lock. Their different hearts will guide them. You have two hours from the moment they meet. No more.
+
+
+**PRIME MINISTER**
 Thank you for coming. I will dispense with formalities. You know the situation. You know what has been asked for.
 
 He nods to the official, who opens the dossier and lays three birth certificates on the table.
@@ -304,7 +346,8 @@ Of course. But your fear does not negate your nature. It contextualizes it. A sa
 So you think… my going would be the right meaning? The needed story?
 
 **YUKI**
-I think of the three paths, the Christian one—of love entering freely into the heart of evil to break its power—is the one that most directly addresses the moment. It does not seek to escape the cycle like Buddhism, or submit to an inscrutable will like Islam, though it has echoes of both. It confronts. It engages. It takes the absurd costume and makes it a vessel for the deepest truth of your tradition. For a nation in despair, the story of a willing, loving sacrifice may be the seed that needs planting.
+Of the three paths, yours is the one this moment needs. Islam seeks submission, and Buddhism seeks release from the cycle. But the Christian path—of love walking willingly into the heart of evil—is about confrontation.
+It engages. It takes this absurd costume and fills it with meaning. For a broken nation, the story it needs to see is one of pure, willing sacrifice. That is the seed we must plant.
 
 **KANJI**
 (Softly)
@@ -323,17 +366,6 @@ I will go.
 
 **NARRATOR**
 The words hang in the air. Final.
-
-**YUKI**
-(Nods, a deep bow of respect)
-Your **Karma** is clear. Your intention is for love, not for self. May it bring an end to this suffering.
-
-**KANJI**
-(His voice choked)
-I will pray for you, Momoko. I will remember this as the true meaning of sacrifice. You have… you have helped me understand submission better. It is not blind. It is trusting in Love.
-
-**MOMOKO**
-Thank you, both of you. You have helped me see my own faith more clearly. The problem of evil… it is not solved in a textbook. It is answered on the ground. In acts. However small. However strange.
 
 A buzzer sounds. The two hours are up.
 
