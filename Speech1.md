@@ -143,7 +143,9 @@ Is it? To allow children to be torn apart by bears as a *test*? That does not so
 She turns to face them, her eyes intense.
 
 **MOMOKO (CONT'D)**
-So how do I reconcile Love itself with this? One explanation is free will. God gave us, and perhaps all creation, genuine freedom. The bears, in their animal consciousness, have a form of it. They chose to leave the forest. They choose violence. God does not stop them because to do so would make us puppets, and love cannot be forced upon puppets. Love requires freedom, even at the terrible cost of misused freedom.
+Love needs freedom to be real.
+God gave us—and maybe even the bears—true freedom of choice. They chose to leave the forest. They chose violence.
+If God stepped in to force a different choice, we’d just be puppets. You can’t force love on a puppet. That freedom is worth the terrible price of their choice.
 
 **YUKI**
 So God values the principle of freedom more than the immediate prevention of suffering?
