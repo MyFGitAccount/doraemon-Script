@@ -45,9 +45,6 @@ You have two hours. To talk. To decide. To... prepare. We will return for your a
 
 He turns to leave, pausing at the door.
 
-**PRIME MINISTER (CONT'D)**
-They told me you were chosen for your faiths as much as your birth. Perhaps that is meant to guide you. I do not know. I only know that in one hundred and twenty minutes, I must have a name. Or I must order a final, futile defense.
-
 He exits. The door seals with a soft *thud* and a click of heavy locks.
 
 **KANJI**
