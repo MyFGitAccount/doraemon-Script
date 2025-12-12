@@ -170,7 +170,9 @@ The bears' violence is the fruit of many causes: our invasion of their home, the
 She pours water from a pitcher into three cups, a deliberate, calming motion.
 
 **YUKI (CONT'D)**
-If Kanji goes out of fearful obligation, the seed is tainted by fear. If Momoko goes as an imitation of Christ, the seed is watered with love but may carry a subtle pride of martyrdom. If I go… I must examine my own motives. Do I seek to end the cycle of suffering, or to escape my own? Karma is meticulous. The intention behind the sacrifice is as important as the act.
+The reason why we go matters as much as going itself.
+If Kanji goes out of fear, that action is rooted in fear. If Momoko goes in loving sacrifice, it may carry a hidden pride. If I go, I must ask: am I trying to truly end the cycle of suffering, or just running from my own?
+Karma is precise. The intention plants the seed.
 
 **KANJI**
 So we must not only decide *who*, but *with what mind*? That’s impossible to purify!
