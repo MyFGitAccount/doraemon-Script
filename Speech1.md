@@ -163,7 +163,9 @@ Perhaps. Or perhaps it’s just what love looks like when the world is overrun b
 A faint, grim smile touches her lips.
 
 **YUKI**
-Your explanation of evil is logical, Momoko. But it is a spectator’s explanation. It explains the *why* of the stage, but not the *action* of the players. My Buddhist focus is on the action itself—**Karma**. Not fate, not punishment, but cause and effect. Volitional action creates seeds. These seeds bear fruit. The bears’ violence is the fruit of countless causes—human encroachment, climate change, ecological imbalance. Our presence here is the fruit of being born at that specific time. And our decision today will plant a new seed with immense consequences.
+Your explanation about evil makes sense from a distance. It's about the stage, but not the actors.
+My view focuses on karma—the action itself. It's about cause and effect. Every action plant  a seed.
+The bears' violence is the fruit of many causes: our invasion of their home, the changing world. Us being here is also a result of past causes. The choice we make now will plant a new seed with huge consequences for the future.
 
 She pours water from a pitcher into three cups, a deliberate, calming motion.
 
