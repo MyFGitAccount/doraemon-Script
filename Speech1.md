@@ -5,6 +5,62 @@
 **NARRATOR**
 Tokyo, 2026. A city held by bears. In a secure room, three people—Momoko, Yuki, and Kanji—face an impossible choice. One must become Doraemon and die to save Japan. They have two hours to decide.
 
+The PRIME MINISTER, a man eroded by crisis, stands before them. Two officials flank him, one holding a plain, sealed dossier.
+
+**PRIME MINISTER**
+Thank you for coming. I will dispense with formalities. You know the situation. You know what has been asked for.
+
+He nods to the official, who opens the dossier and lays three birth certificates on the table.
+
+**PRIME MINISTER (CONT'D)**
+Momoko Aoki. Yuki Tanaka. Kanji Hayashi. All born at 1:11 a.m., January 1st, 2001. A temporal anomaly our specialists identified as... significant. The Shinto master was insistent. The Bear King’s demand is not for just anyone. It is for one of you.
+
+**KANJI**
+Why? What does our birth time have to do with bears? With... Doraemon?
+
+**PRIME MINISTER**
+We don’t pretend to understand the cosmology of a bear. We only know what the intermediaries have relayed. The King believes in the story. Believes the blue one will come to lead them back to a promised, untouched forest. But the vessel must be... auspicious. Aligned. You three are the only living individuals with that exact celestial alignment. The master says the bears can *smell* it.
+
+**MOMOKO**
+So we are sacrifices chosen by astrology.
+
+**PRIME MINISTER**
+(His voice cracks with exhaustion)
+You are the key to a ceasefire. To the survival of the remaining 30%. We have tried force. We have tried negotiation. This... this children’s story is the only thing that has elicited a response other than violence. They will accept a Doraemon. They will follow it out of our cities. But the one who goes... will not return. The King’s terms are clear. Doraemon belongs to the forest now.
+
+**YUKI**
+And if we refuse? If no one goes?
+
+**PRIME MINISTER**
+Then the advance resumes at nightfall. The last pocket of Tokyo falls. And Japan, as a functional entity, ceases to exist.
+
+He places a heavy, old-fashioned alarm clock on the table. He winds it, and the loud TICKING fills the sterile room.
+
+**PRIME MINISTER (CONT'D)**
+You have two hours. To talk. To decide. To... prepare. We will return for your answer.
+
+He turns to leave, pausing at the door.
+
+**PRIME MINISTER (CONT'D)**
+They told me you were chosen for your faiths as much as your birth. Perhaps that is meant to guide you. I do not know. I only know that in one hundred and twenty minutes, I must have a name. Or I must order a final, futile defense.
+
+He exits. The door seals with a soft *thud* and a click of heavy locks.
+
+**KANJI**
+(Exhaling shakily)
+So. This is it. We have two hours to decide which one of us… goes to the bears.
+
+**MOMOKO**
+(Quietly)
+To die.
+
+**YUKI**
+Nods slowly, her eyes fixed on the bear outside.
+The Prime Minister made that quite clear. One Doraemon. One sacrifice. The Bear King accepts nothing less. The Shinto master was… specific.
+
+*[CONTINUES AS IN ORIGINAL SCRIPT...]*
+
+**[SCENE END]**
 
 **KANJI**
 (Exhaling shakily)
