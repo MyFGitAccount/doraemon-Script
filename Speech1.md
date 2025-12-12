@@ -151,7 +151,8 @@ If God stepped in to force a different choice, we’d just be puppets. You can�
 So God values the principle of freedom more than the immediate prevention of suffering?
 
 **MOMOKO**
-It seems so. But it’s not indifference. Love enters into the suffering. Christ on the cross is the symbol of that—God *with us* in the worst of it. Not a remote observer, but a fellow sufferer. So my choice, if I were to go… it would not be to appease a bear king for a Shinto god. It would be an act of entering into the brokenness, an imitation of that divine love. A willing descent into the consequence of a broken world, to save others from it. Not because I am forced, but because love, in the face of evil, chooses to sacrifice.
+You're right, it's not indifference. Love doesn't watch from a distance—it enters the suffering, like Christ on the cross.
+So if I go, it won't be to fulfill a myth or please a god. It will be an act of love. A choice to enter a broken world and share its pain, to save others from it. Not because I have to, but because true love, when faced with evil, chooses sacrifice.
 
 **KANJI**
 That… is beautiful, Momoko. But it is also very Christian. It turns the Doraemon costume into a cross.
