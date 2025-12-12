@@ -27,8 +27,10 @@ That's you three. You have the exact alignment the bears are looking for. They c
 So we are sacrifices chosen by astrology.
 
 **PRIME MINISTER**
-(His voice cracks with exhaustion)
-You are the key to a ceasefire. To the survival of the remaining 30%. We have tried force. We have tried negotiation. This... this children’s story is the only thing that has elicited a response other than violence. They will accept a Doraemon. They will follow it out of our cities. But the one who goes... will not return. The King’s terms are clear. Doraemon belongs to the forest now.
+You three are our last hope for peace. Fighting and talking got us nowhere.
+The only thing that’s worked is this old bear legend. They’ve agreed to leave our cities—but only if their chosen "Doraemon" leads them.
+Whoever goes as Doraemon can never come back. That’s the King’s final word.
+
 
 **YUKI**
 And if we refuse? If no one goes?
