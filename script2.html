@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tokyo, 2026: The Doraemon Sacrifice</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css">
+    <style>
+        :root {
+            --primary-color: #2b2b2b;
+            --secondary-color: #8B4513;
+            --text-color: #f0f0f0;
+        }
+        
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            overflow: hidden;
+            background: #000;
+            color: var(--text-color);
+            touch-action: manipulation;
+        }
+        
+        .reveal {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2b2b2b 100%);
+        }
+        
+        .reveal .slides {
+            text-align: left;
+            padding: 20px;
+        }
+        
+        .reveal section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .scene-header {
+            color: #ff6b6b;
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .character {
+            color: #4ecdc4;
+            font-weight: bold;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+        
+        .dialogue {
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(139, 69, 19, 0.1);
+            border-left: 4px solid var(--secondary-color);
+            border-radius: 4px;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        
+        .narrator {
+            color: #ffd166;
+            font-style: italic;
+            margin: 20px 0;
+            padding: 10px;
+            background: rgba(255, 209, 102, 0.1);
+            border-radius: 4px;
+            font-size: 1.1em;
+        }
+        
+        .reveal .controls {
+            color: var(--secondary-color);
+        }
+        
+        .reveal .progress {
+            color: var(--secondary-color);
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .scene-header {
+                font-size: 1.4em;
+            }
+            
+            .character {
+                font-size: 1.2em;
+            }
+            
+            .dialogue {
+                font-size: 1em;
+                padding: 10px;
+            }
+            
+            .narrator {
+                font-size: 0.95em;
+            }
+            
+            .reveal .slides {
+                padding: 10px;
+            }
+        }
+        
+        /* Swipe hint for mobile */
+        .swipe-hint {
+            position: fixed;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9em;
+            z-index: 100;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+        
+        /* Scene transitions */
+        .scene-transition {
+            background: linear-gradient(135deg, #000000 0%, #2b1a0f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .scene-title {
+            font-size: 2.5em;
+            color: #ff6b6b;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .scene-subtitle {
+            font-size: 1.2em;
+            color: #ffd166;
+            text-align: center;
+            max-width: 80%;
+        }
+        
+        /* Character-specific styles */
+        .momoko { color: #ff9a9e; }
+        .yuki { color: #a0e7e5; }
+        .kanji { color: #84fab0; }
+        .pm { color: #f6d365; }
+        .master { color: #c471ed; }
+        
+        /* Final scene styling */
+        .final-scene {
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            text-align: center;
+        }
+        
+        .final-text {
+            font-size: 1.5em;
+            margin: 20px 0;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        /* Hide swipe hint after first interaction */
+        body.interacted .swipe-hint {
+            display: none;
+        }
+        
+        /* Keep text visible */
+        .reveal .slides section {
+            overflow-y: auto !important;
+            overflow-x: hidden !important;
+        }
+        
+        /* Ensure all text is visible */
+        .reveal .slides section > * {
+            max-width: 100%;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="swipe-hint">← Swipe or use arrow keys to navigate →</div>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Title Slide -->
+            <section class="scene-transition">
+                <h1 class="scene-title">TOKYO, 2026</h1>
+                <div class="scene-subtitle">A city held by bears. Three must decide: who becomes Doraemon and dies to save Japan.</div>
+            </section>
+
+            <!-- Scene 1: The Setup -->
+            <section>
+                <div class="scene-header">THE SETUP</div>
+                <div class="narrator">
+                    Tokyo, 2026. Bears control the city. Three people—Momoko, Yuki, and Kanji—must decide who will become Doraemon and die. They have two hours.
+                </div>
+                <div class="character pm">PRIME MINISTER</div>
+                <div class="dialogue">Momoko Aoki. Yuki Tanaka. Kanji Hayashi. All born at 1:11 a.m., January 1st, 2001. The Bear King demands one of you become Doraemon.</div>
+                <div class="character kanji">KANJI</div>
+                <div class="dialogue">Why? What does our birth time have to do with bears?</div>
+                <div class="character pm">PRIME MINISTER</div>
+                <div class="dialogue">The bears believe in a prophecy. They will follow Doraemon back to the forests. But the one who goes... will not return.</div>
+            </section>
+
+            <!-- Scene 2: The Ultimatum -->
+            <section>
+                <div class="scene-header">THE ULTIMATUM</div>
+                <div class="character yuki">YUKI</div>
+                <div class="dialogue">And if we refuse?</div>
+                <div class="character pm">PRIME MINISTER</div>
+                <div class="dialogue">Then Tokyo falls tonight. Japan ceases to exist.</div>
+                <div class="narrator">
+                    He places an alarm clock on the table. The loud TICKING begins.
+                </div>
+                <div class="character pm">PRIME MINISTER (CONT'D)</div>
+                <div class="dialogue">You have two hours.</div>
+                <div class="narrator">
+                    He exits. The door seals.
+                </div>
+            </section>
+
+            <!-- Scene 3: First Reactions -->
+            <section>
+                <div class="scene-header">KANJI'S OFFER - RAMADAN</div>
+                <div class="character kanji">KANJI</div>
+                <div class="dialogue">I… I should go.</div>
+                <div class="character momoko">MOMOKO</div>
+                <div class="dialogue">Why, Kanji?</div>
+                <div class="character kanji">KANJI</div>
+                <div class="dialogue">Because it is Ramadan. Well, it was. It ended last week. But… the spirit remains. It is about self-discipline, sacrifice, and empathy for those who suffer. For thirty days, we abstain to draw closer to God, to purify ourselves, to remember the needy. Now… look outside. All of Japan is needy. All are suffering. If the ultimate act of <strong>Ramadan</strong> is to give of oneself completely to alleviate suffering, in obedience to God's will… then perhaps this is my test. A final, terrible sadaqah.</div>
+                <div class="narrator">
+                    He speaks with passion, but his hands tremble.
+                </div>
+            </section>
+
+            <!-- Scene 4: Yuki's Response - Chengfu -->
+            <section>
+                <div class="scene-header">YUKI'S RESPONSE - CHENGFU</div>
+                <div class="character yuki">YUKI</div>
+                <div class="dialogue">That is a noble impulse, Kanji. But is it wisdom? Or is it fear speaking, dressed as piety? Let us think, not just feel. In my tradition—the Daoist part of me—we speak of <strong>Chengfu</strong>.</div>
+                <div class="character momoko">MOMOKO</div>
+                <div class="dialogue">"Returning to simplicity"?</div>
+                <div class="character yuki">YUKI</div>
+                <div class="dialogue">Yes. But more. It is the burden of one's innate nature, the karma of your very being before you even act. The weight you are born to carry. My Buddhist side would call it vāsanā, the karmic imprints. We three were all born at the same, absurdly specific moment. 1:11 am, January 1st, 2001. Why? What is the <strong>Chengfu</strong> of that moment? What is the collective burden we share, simply by being here, born then?</div>
+            </section>
+
+            <!-- Scene 5: Momoko's Dilemma - Problem of Evil -->
+            <section>
+                <div class="scene-header">MOMOKO'S DILEMMA - PROBLEM OF EVIL</div>
+                <div class="character momoko">MOMOKO</div>
+                <div class="dialogue">You speak of understanding the current. But my faith speaks of a God who is the source of the river itself. And this… this horror of the bears, the slaughter, the collapse… it forces the oldest question to the surface. The one we call the problem of evil.</div>
+                <div class="narrator">
+                    She stands, walking to the window.
+                </div>
+                <div class="character momoko">MOMOKO (CONT'D)</div>
+                <div class="dialogue">If God is all-good, He would want to stop this. If He is all-powerful, He could stop this. If He is all-knowing, He would have foreseen and prevented it. Yet the bears rule Japan. So, where is God? Is He not good? Not powerful? Or… is this part of some plan we cannot fathom?</div>
+            </section>
+
+            <!-- Scene 6: Kanji's View -->
+            <section>
+                <div class="scene-header">KANJI'S VIEW - TEST FROM GOD</div>
+                <div class="character kanji">KANJI</div>
+                <div class="dialogue">It is a test! Like the story of Ibrahim and Ismail. God tested their obedience. This is a test for Japan, for us!</div>
+                <div class="character momoko">MOMOKO</div>
+                <div class="dialogue">Is it? To allow children to be torn apart by bears as a test? That does not sound like love. It sounds like cruelty. And yet… my faith insists: <strong>God is love</strong>. Not just loving, but Love itself. The very essence.</div>
+            </section>
+
+            <!-- Scene 7: Momoko's Explanation of Evil -->
+            <section>
+                <div class="scene-header">EXPLANATION OF EVIL - GOD IS LOVE</div>
+                <div class="character momoko">MOMOKO (CONT'D)</div>
+                <div class="dialogue">Love needs freedom to be real. God gave us—and maybe even the bears—true freedom of choice. They chose to leave the forest. They chose violence. If God stepped in to force a different choice, we'd just be puppets. You can't force love on a puppet. That freedom is worth the terrible price of their choice.</div>
+                <div class="character yuki">YUKI</div>
+                <div class="dialogue">So God values the principle of freedom more than the immediate prevention of suffering?</div>
+                <div class="character momoko">MOMOKO</div>
+                <div class="dialogue">You're right, it's not indifference. Love doesn't watch from a distance—it enters the suffering, like Christ on the cross. So if I go, it won't be to fulfill a myth or please a god. It will be an act of love. A choice to enter a broken world and share its pain, to save others from it. Not because I have to, but because true love, when faced with evil, chooses sacrifice.</div>
+            </section>
+
+            <!-- Scene 8: Yuki on Karma -->
+            <section>
+                <div class="scene-header">YUKI ON KARMA</div>
+                <div class="character yuki">YUKI</div>
+                <div class="dialogue">Your explanation about evil makes sense from a distance. It's about the stage, but not the actors. My view focuses on <strong>Karma</strong>—the action itself. It's about cause and effect. Every action plant a seed. The bears' violence is the fruit of many causes: our invasion of their home, the changing world. Us being here is also a result of past causes. The choice we make now will plant a new seed with huge consequences for the future.</div>
+                <div class="narrator">
+                    She pours water from a pitcher into three cups.
+                </div>
+            </section>
+
+            <!-- Scene 9: Intention and Karma -->
+            <section>
+                <div class="scene-header">INTENTION AND KARMA</div>
+                <div class="character yuki">YUKI (CONT'D)</div>
+                <div class="dialogue">The reason why we go matters as much as going itself. If Kanji goes out of fear, that action is rooted in fear. If Momoko goes in loving sacrifice, it may carry a hidden pride. If I go, I must ask: am I trying to truly end the cycle of suffering, or just running from my own? <strong>Karma</strong> is precise. The intention plants the seed.</div>
+                <div class="character kanji">KANJI</div>
+                <div class="dialogue">So we must not only decide who, but with what mind? That's impossible to purify!</div>
+            </section>
+
+            <!-- Scene 10: Breaking the Cycle -->
+            <section>
+                <div class="scene-header">BREAKING THE CYCLE</div>
+                <div class="character yuki">YUKI</div>
+                <div class="dialogue">It is the work of a lifetime. We have two hours. The point is, we must be ruthlessly honest. This is not about earning a reward. In Buddhism, sacrifice for reward is still a transaction, binding you to the cycle. The ultimate goal is to act with such selfless compassion that you break the cycle. For the sake of all beings. Including the bears.</div>
+                <div class="character momoko">MOMOKO</div>
+                <div class="dialogue">Compassion… for the bears?</div>
+                <div class="character yuki">YUKI</div>
+                <div class="dialogue">They are suffering too. They are driven by a hunger they do not understand, a search for a mythical ruler. They are trapped in aggression and fear. They are part of the sentient world suffering from ignorance. A Bodhisattva would have compassion for them as well. So the act of going… if done with that ultimate, impartial compassion… could generate immense, liberating merit. Not for me, but for the situation itself.</div>
+            </section>
+
+            <!-- Scene 11: Doubts and Introspection -->
+            <section>
+                <div class="scene-header">DOUBTS AND INTROSPECTION</div>
+                <div class="character kanji">KANJI</div>
+                <div class="dialogue">I offered to go. But now… your words confuse me. Is my offer true submission, or just a desperate attempt to make sense of the chaos? To force God's hand?</div>
+                <div class="character yuki">YUKI</div>
+                <div class="dialogue">It is. And it touches on <strong>Chengfu</strong> again. Your innate nature, Kanji, is passionate and devout. That is your burden and your gift. To act against it would be a violence to yourself. To act solely from its fever pitch might be unwise. You must find its still center.</div>
+                <div class="narrator">
+                    An alarm clock ticks loudly. An hour has passed.
+                </div>
+            </section>
+
+            <!-- Scene 12: Which Story? -->
+            <section>
+                <div class="scene-header">WHICH STORY WILL DIE?</div>
+                <div class="character momoko">MOMOKO</div>
+                <div class="dialogue">Perhaps we are asking the wrong question. We're asking "Who should die?" as if it's a philosophical contest. Maybe the question is "Who can do this thing, and what will it mean?"</div>
+                <div class="character momoko">MOMOKO (CONT'D)</div>
+                <div class="dialogue">Exactly. Kanji, if you go, your act becomes one of Islamic submission to the Divine Decree, a final, profound Ramadan sacrifice. It will be remembered as a Muslim act.</div>
+                <div class="character momoko">MOMOKO (CONT'D)</div>
+                <div class="dialogue">Yuki, if you go, your act becomes one of Buddhist-Daoist compassion and karmic resolution. A release from cycles.</div>
+                <div class="character momoko">MOMOKO (CONT'D)</div>
+                <div class="dialogue">And if I go… it becomes a Christian act of sacrificial love. A participation in the divine response to evil.</div>
+            </section>
+
+            <!-- Scene 13: The Decision -->
+            <section>
+                <div class="scene-header">THE DECISION</div>
+                <div class="character kanji">KANJI</div>
+                <div class="dialogue">I have been thinking. About your <strong>God is love</strong>, Momoko. And about submission. In Islam, God is Al-Wadud, the Loving. His will is an expression of that love. My offer… it was not trust. It was a frantic bargain. "Take me so this ends." That is not loving submission. That is terror. I must… I must withdraw my offer.</div>
+                <div class="character yuki">YUKI</div>
+                <div class="dialogue">And I have been thinking of <strong>Karma</strong>. If I go seeking to be a Bodhisattva, the very seeking plants the seed of ego. The 'I' who will be a hero. The 'I' who will generate merit. It is a trap. True compassion is without a self who is compassionate.</div>
+                <div class="character yuki">YUKI (CONT'D)</div>
+                <div class="dialogue">You, Momoko. You spoke of love not as a feeling, but as the nature of God. As a person. An act. That… feels less karmically sticky. It is about the nature of the act itself, not its future fruit for the actor.</div>
+            </section>
+
+            <!-- Scene 14: Momoko's Choice -->
+            <section>
+                <div class="scene-header">MOMOKO'S CHOICE</div>
+                <div class="character momoko">MOMOKO</div>
+                <div class="dialogue">
+                    <span class="parenthetical">(Tears welling)</span>
+                    I am afraid. I do not want to die. The thought of those bears… it is a primal horror.
+                </div>
+                <div class="character yuki">YUKI</div>
+                <div class="dialogue">Of course. But your fear does not negate your nature. It contextualizes it. A sacrifice without fear is no sacrifice. It is just a transaction.</div>
+                <div class="narrator">
+                    Momoko looks out the window. The sun is lower.
+                </div>
+                <div class="character momoko">MOMOKO</div>
+                <div class="dialogue">If I do this… it is not because I believe the Shinto master's myth. It is because I believe in the God who is love. And if Love has a place in this bear-ridden hell, it is beside the victim, becoming the victim, to stop the victimizing. Not by power, but by solidarity. Even if it looks like a fool in a Doraemon costume.</div>
+                <div class="character momoko">MOMOKO (CONT'D)</div>
+                <div class="dialogue">I will go.</div>
+            </section>
+
+            <!-- Final Scene -->
+            <section class="final-scene">
+                <div class="scene-header">THE SACRIFICE</div>
+                <div class="narrator">
+                    A buzzer sounds. The two hours are up. Momoko stands before the Bear King in the Doraemon costume. She removes the head, revealing her human face.
+                </div>
+                <div class="character momoko">MOMOKO</div>
+                <div class="dialogue">The search is over. I am here. Now… let your people go. Go back to the forests. Leave the cities. The killing ends now.</div>
+                <div class="narrator">
+                    The Bear King roars a command. The bears turn and begin their exodus north.
+                </div>
+                <div class="final-text" style="animation-delay: 1s">
+                    <span class="yuki">YUKI (V.O., whispering)</span><br>
+                    <strong>Chengfu</strong> fulfilled.
+                </div>
+                <div class="final-text" style="animation-delay: 2.5s">
+                    <span class="kanji">KANJI (V.O., through tears)</span><br>
+                    <strong>God is love</strong>.
+                </div>
+                <div class="final-text" style="animation-delay: 4s">
+                    <span class="momoko">MOMOKO (V.O., a gentle whisper)</span><br>
+                    And love has driven out the fear.
+                </div>
+                <div class="final-text" style="animation-delay: 6s; font-size: 1.2em;">
+                    <div class="narrator" style="background: transparent; text-align: center;">
+                        Momoko follows the bears into the gathering dusk.
+                    </div>
+                </div>
+                <div class="final-text" style="animation-delay: 8s; margin-top: 40px; color: #ff6b6b; font-size: 1.8em;">
+                    [SCENE END]
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script>
+        // Initialize reveal.js with mobile-friendly settings
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            keyboard: {
+                37: 'prev',
+                39: 'next',
+                38: 'prev',
+                40: 'next'
+            },
+            touch: true,
+            mouseWheel: true,
+            hideInactiveCursor: true,
+            hideCursorTime: 3000,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            overview: true,
+            center: true,
+            loop: false,
+            fragments: true,
+            help: true,
+            showNotes: false,
+            autoPlayMedia: null,
+            autoSlide: 0,
+            autoSlideStoppable: true,
+            defaultTiming: 180,
+            touch: true,
+            plugins: []
+        });
+        
+        // Track first interaction to hide swipe hint
+        document.addEventListener('touchstart', function() {
+            document.body.classList.add('interacted');
+        }, { once: true });
+        
+        document.addEventListener('click', function() {
+            document.body.classList.add('interacted');
+        }, { once: true });
+        
+        document.addEventListener('keydown', function() {
+            document.body.classList.add('interacted');
+        }, { once: true });
+        
+        // Ensure all content is visible
+        Reveal.addEventListener('slidechanged', function(event) {
+            setTimeout(function() {
+                const currentSlide = event.currentSlide;
+                currentSlide.scrollTop = 0;
+            }, 10);
+        });
+        
+        // Allow scrolling within slides if content overflows
+        const slides = document.querySelectorAll('.reveal .slides section');
+        slides.forEach(slide => {
+            slide.style.overflowY = 'auto';
+            slide.style.overflowX = 'hidden';
+        });
+    </script>
+</body>
+</html>
