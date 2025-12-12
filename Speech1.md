@@ -19,7 +19,9 @@ Momoko Aoki. Yuki Tanaka. Kanji Hayashi. All born at 1:11 a.m., January 1st, 200
 Why? What does our birth time have to do with bears? With... Doraemon?
 
 **PRIME MINISTER**
-We don’t pretend to understand the cosmology of a bear. We only know what the intermediaries have relayed. The King believes in the story. Believes the blue one will come to lead them back to a promised, untouched forest. But the vessel must be... auspicious. Aligned. You three are the only living individuals with that exact celestial alignment. The master says the bears can *smell* it.
+We know there's a prophecy: a chosen bear will lead them to a promised forest.
+The King believes it's true. For it to work, the chosen one needs the right star-sign.
+That's you three. You have the exact alignment the bears are looking for. They can smell it on you.
 
 **MOMOKO**
 So we are sacrifices chosen by astrology.
