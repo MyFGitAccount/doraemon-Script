@@ -9,7 +9,7 @@ Let me give you three examples.
 
 **First: Making the yuan a global currency.**
 
-In 2024, Hong Kong's Financial Secretary announced a 100 billion RMB fund to support trade financing. This sounds complicated, but here's what it means: it encourages companies trading with China to use yuan instead of US dollars.
+In 2024, Hong Kong's Financial Secretary announced a 100 billion RMB fund to support trade financing. This sounds complicated, but  it just means it encourages companies trading with China to use yuan instead of US dollars.
 
 Every time a business chooses yuan over dollars, the US financial system loses a bit of influence. Hong Kong is becoming the main hub where the world can access and use China's currency. This isn't just about finance—it's about China gaining independence from dollar-based systems.
 
