@@ -22,6 +22,10 @@ This is what experts call "institutional parallelism"—creating backup systems 
 
 **Third: This isn't new.**
 
+These plans started long before COVID. China laid the groundwork in the late 2000s. The first Connect programs launched in 2014. The mBridge project—a digital currency system with Thailand and the UAE to bypass the dollar—was already in development before the pandemic.
+
+so to conclude
+
 Hong Kong’s role isn’t just political—it’s about reshaping how global finance works. China is turning Hong Kong into a hub for a financial system that can connect with the West when useful, but also operate independently. This marks a new phase of globalization: instead of one unified system under Western rules, we now see parallel systems with their own rules, currencies, and institutions. Hong Kong is the key pivot in China’s effort to challenge U.S. financial dominance.
 
 Thank you.
