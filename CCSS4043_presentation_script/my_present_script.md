@@ -4,7 +4,7 @@ Here's Speech 3 rewritten in plain, simple language at about 280 words:
 
 Good morning/afternoon. I want to talk about how China is using Hong Kong as a tool in its competition with the United States.
 
-In the past, Hong Kong was just a neutral bridge between China and the West. Today, it's become something more active—an instrument China uses to build economic strength and reduce reliance on Western-controlled systems.
+In the past, Hong Kong was just a neutral bridge between China and the West. Today, it's an instrument that China uses to build economic strength and reduce reliance on Western-controlled systems.
 
 Let me give you three examples.
 
